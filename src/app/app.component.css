@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: gray;
+  padding: 1.5rem;
+  font-size: medium;
+  font-weight: 800;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header__wallet {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  transition: 0.2s ease-in all;
+}
+.header__wallet:hover {
+  border-color: #00ff00;
+  background-color: #00ff00;
+  color: #fff;
+}
+.header__nivagator {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__nivagator__item {
+  text-decoration: none;
+  color: aliceblue;
+  transition: 0.2s ease-in all;
+}
+.header__nivagator__item:hover {
+  transform: scale(1.1);
+}

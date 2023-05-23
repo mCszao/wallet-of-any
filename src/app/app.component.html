@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="header-container">
+    <img class="header__image" src="" alt="LOGO" />
+    <p class="header__wallet">R$ {{ wallet }}</p>
+  </div>
+  <nav class="header__nivagator">
+    <a class="header__nivagator__item" href="#">+NOVA TRANSFERÊNCIA</a>
+    <a class="header__nivagator__item" href="#">EXTRATO</a>
+  </nav>
+</header>
+<new-transfer (onTransfer)="updateWallet($event)"></new-transfer>
+<app-extrato [transferList]="transferList"></app-extrato>

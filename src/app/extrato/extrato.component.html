@@ -1,0 +1,31 @@
+<section class="container" *ngIf="transferList.length > 0; else emptyList">
+  <h1 class="container__title">Extrato</h1>
+  <table class="table">
+    <thead class="table__head">
+      <th class="table__head__column">Valores</th>
+      <th class="table__head__column">Descrição</th>
+      <th class="table__head__column">Tipo</th>
+      <th class="table__head__column">Data</th>
+      <th class="table__head__column">Horário</th>
+    </thead>
+    <tbody class="table__content">
+      <tr class="table__content__row" *ngFor="let item of transferList">
+        <td class="table__content__row__data">{{ item.value }}</td>
+        <td class="table__content__row__data">
+          {{ item.description.slice(0, 32) }}
+        </td>
+        <td class="table__content__row__data">{{ item.type }}</td>
+        <td class="table__content__row__data">{{ item.date }}</td>
+        <td class="table__content__row__data">{{ item.hours }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<ng-template #emptyList>
+  <div class="box-emptyList">
+    <i>Nenhum lançamento foi realizado</i>
+    <p>
+      Clique em <strong>Nova Transferência</strong> para adicionar ao extrato.
+    </p>
+  </div></ng-template
+>
