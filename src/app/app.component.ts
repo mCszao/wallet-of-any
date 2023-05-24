@@ -1,3 +1,4 @@
+import { UpdateWalletService } from './services/updateWallet.service';
 import { Component } from '@angular/core';
 import { Transfer } from './new-transfer/class/transfer';
 
@@ -9,18 +10,13 @@ import { Transfer } from './new-transfer/class/transfer';
 export class AppComponent {
   title = 'WalletOfAny';
 
-  wallet: number = 0;
-  transferList: Array<Transfer> = [];
+  wallet: number = this.service.actualWallet;
+
+  constructor(private service: UpdateWalletService) {}
+
   updateWallet($event: Transfer) {
     this.wallet += $event.value;
-    const date = new Date();
-    const dateDay = date.getUTCDate();
-    const hours = date.getHours();
-    this.transferList.push({
-      ...$event,
-      launchDate: date,
-      date: dateDay,
-      hours: hours,
-    });
+
+    this.service.addNewTransfer($event);
   }
 }

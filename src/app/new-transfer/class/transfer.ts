@@ -3,8 +3,8 @@ export class Transfer {
   public description: string;
   public type: string;
   launchDate: Date;
-  date: number;
-  hours: number;
+  date: string;
+  hours: string;
 
   constructor(value: number, description: string, type) {
     (this.value = value), (this.description = description), (this.type = type);

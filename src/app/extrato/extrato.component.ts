@@ -1,13 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { UpdateWalletService } from './../services/updateWallet.service';
+import { Component, OnInit } from '@angular/core';
 import { Transfer } from '../new-transfer/class/transfer';
 
 @Component({
   selector: 'app-extrato',
   templateUrl: './extrato.component.html',
-  styleUrls: ['./extrato.component.css']
+  styleUrls: ['./extrato.component.css'],
 })
 export class ExtratoComponent {
-  @Input()
-  transferList: Array<Transfer> = []
-
+  transferList: Array<Transfer> = [];
+  constructor(private service: UpdateWalletService) {}
+  ngOnInit() {
+    this.transferList = this.service.listingTransfer;
+  }
 }

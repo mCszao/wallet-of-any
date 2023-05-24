@@ -12,6 +12,8 @@ export class NewTransferComponent {
   value: number = 0;
   description: string;
   type: string;
+  ativo: string = 'ativo';
+  passivo: string = 'passivo';
   newTransferRequest() {
     const newTransferDTO = new Transfer(
       this.value,
