@@ -4,9 +4,10 @@
     <p class="header__wallet">R$ {{ wallet }}</p>
   </div>
   <nav class="header__nivagator">
-    <a class="header__nivagator__item" href="#">+NOVA TRANSFERÊNCIA</a>
-    <a class="header__nivagator__item" href="#">EXTRATO</a>
+    <a class="header__nivagator__item" routerLink="new-transfer"
+      >+NOVA TRANSFERÊNCIA</a
+    >
+    <a class="header__nivagator__item" routerLink="extrato">EXTRATO</a>
   </nav>
 </header>
-<new-transfer (onTransfer)="updateWallet($event)"></new-transfer>
-<app-extrato ></app-extrato>
+<router-outlet></router-outlet>

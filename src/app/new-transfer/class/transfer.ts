@@ -2,7 +2,6 @@ export class Transfer {
   public value: number;
   public description: string;
   public type: string;
-  launchDate: Date;
   date: string;
   hours: string;
 

@@ -24,7 +24,6 @@ export class UpdateWalletService {
     const hours = this.formatHour(date);
     this.transferList.push({
       ...transfer,
-      launchDate: date,
       date: dateDay,
       hours: hours,
     });

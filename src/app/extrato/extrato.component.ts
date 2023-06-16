@@ -1,6 +1,7 @@
 import { UpdateWalletService } from './../services/updateWallet.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Transfer } from '../new-transfer/class/transfer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-extrato',
@@ -9,7 +10,11 @@ import { Transfer } from '../new-transfer/class/transfer';
 })
 export class ExtratoComponent {
   transferList: Array<Transfer> = [];
-  constructor(private service: UpdateWalletService) {}
+  constructor(private service: UpdateWalletService, private router: Router) {}
+
+  private goToNewTransfer() {
+    this.router.navigateByUrl('new-transfer');
+  }
   ngOnInit() {
     this.transferList = this.service.listingTransfer;
   }
